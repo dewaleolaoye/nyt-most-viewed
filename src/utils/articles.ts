@@ -21,7 +21,7 @@ export const mediaMetaData = ({ articles, filter }: IMetaData) => {
 
   const { caption, copyright, subtype, type } = media[0] ?? {};
 
-  const result = metadata?.filter(({ format, }) => {
+  const result = metadata?.filter(({ format }) => {
     return format === filter;
   });
 
