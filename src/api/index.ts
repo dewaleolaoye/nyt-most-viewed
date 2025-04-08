@@ -1,5 +1,5 @@
 import { config } from "@/config";
-import { IArticlesRO } from "@/types";
+import { IArticlesRO, IError } from "@/types";
 import axios, { AxiosResponse } from "axios";
 
 export const getArticles = async (period?: number): Promise<IArticlesRO> => {
@@ -8,11 +8,15 @@ export const getArticles = async (period?: number): Promise<IArticlesRO> => {
   try {
     const response = await axios.get(BASE_URL) as AxiosResponse<IArticlesRO>;
 
-    console.log(response, 'THE response');
-
     return response.data;
   } catch (error) {
-    console.log(error, 'THE ERROR');
-    return error as IArticlesRO;
+
+    const _err = error as unknown as { response?: IError; };
+
+    if (_err.response?.data) {
+      throw new Error(_err.response.data.fault.faultstring);
+    }
+
+    throw new Error("An unexpected error occurred");
   }
 };

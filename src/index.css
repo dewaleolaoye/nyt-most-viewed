@@ -6,7 +6,7 @@
 body {
   margin: 0;
   color: #131316;
-  padding: 24px 0;
+  padding: 24px 0 8px;
 
   font-family: 'Funnel Display', sans-serif;
   font-optical-sizing: auto;

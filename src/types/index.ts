@@ -37,11 +37,22 @@ export interface IArticles {
   org_facet: string[];
   per_facet: string[];
   geo_facet: string[];
-  media: IMedum[];
+  media: IMedum[] | IMedum;
   eta_id: number;
 }
 
-export interface IArticlesRO {
+export interface IError {
+  data: {
+    fault: {
+      faultstring: string;
+      detail: {
+        errorcode: string;
+      };
+    };
+  };
+}
+
+export interface IArticlesRO extends IError {
   status: string;
   copyright: string;
   num_results: number;
