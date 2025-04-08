@@ -1,7 +1,7 @@
-import { IArticles, IFormat } from '@/types';
 import { Avatar, AvatarGroup, Box, Flex, Image, Text } from '@chakra-ui/react';
-import SectionTag from './SectionTag';
 import { mediaMetaData, formatDate } from '@/utils';
+import SectionTag from '../SectionTag';
+import { IArticles, IFormat } from '@/types';
 
 interface Props {
   filter: IFormat;
@@ -12,18 +12,18 @@ const ArticleCard = ({ filter, articles }: Props) => {
   const { metadata, caption } = mediaMetaData({ articles, filter });
 
   return (
-    <a
-      href={url}
-      target='_blank'
-      rel='noopener noreferrer'
+    <Box
+      width='100%'
+      // maxW={{ base: 'auto', md: '420px' }}
+      border='1px solid #efefef'
+      borderRadius='8px'
+      p={{ base: '8px', md: '16px' }}
+      minH={{ base: 'auto', md: '585px' }}
     >
-      <Box
-        width='100%'
-        maxW={{ base: 'auto', md: '420px' }}
-        border='1px solid #efefef'
-        borderRadius='8px'
-        p={{ base: '8px', md: '16px' }}
-        minH={{ base: 'auto', md: '585px' }}
+      <a
+        href={url}
+        target='_blank'
+        rel='noopener noreferrer'
       >
         <Flex
           flexDir='column'
@@ -32,7 +32,7 @@ const ArticleCard = ({ filter, articles }: Props) => {
         >
           <Box>
             <Image
-              width={{ base: 'auto', md: '400px' }}
+              width={{ base: 'auto', md: '100%' }}
               height='auto'
               src={metadata?.url}
               alt={caption}
@@ -89,8 +89,8 @@ const ArticleCard = ({ filter, articles }: Props) => {
             </Box>
           </Flex>
         </Flex>
-      </Box>
-    </a>
+      </a>
+    </Box>
   );
 };
 

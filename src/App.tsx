@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import { Box, Button, Center, Flex, Grid, Text } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import { getArticles } from '@/api';
 import Loader from '@/components/common/Loader';
 import ArticleCard from '@/components/articles/ArticleCard';
-import { useState } from 'react';
-import FilterSelect from './components/articles/FilterSelect';
+import FilterSelect from '@/components/articles/FilterSelect';
 
 function App() {
   const [period, setPeriod] = useState(1);
