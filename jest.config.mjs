@@ -75,9 +75,9 @@ const config = {
 
   // A set of global variables that need to be available in all test environments
   globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.test.json',
-    },
+    // 'ts-jest': {
+    //   tsconfig: 'tsconfig.test.json',
+    // },
   },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
@@ -101,9 +101,9 @@ const config = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  moduleNameMapper: {
-    '^punycode$': '<rootDir>/node_modules/punycode/',
-  },
+  // moduleNameMapper: {
+  //   '^punycode$': '<rootDir>/node_modules/punycode/',
+  // },
 
   // moduleNameMapper: {
   //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
@@ -134,8 +134,8 @@ const config = {
   // Reset the module registry before running each individual test
   // resetModules: false,
 
-  // A path to a custom resolver
-  // resolver: undefined,
+  // Remove the moduleNameMapper for punycode
+  moduleNameMapper: {},
 
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,
@@ -194,7 +194,12 @@ const config = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '^.+\\.tsx?$': ['ts-jest'],
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.test.json',
+      },
+    ],
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
