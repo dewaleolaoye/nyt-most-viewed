@@ -134,9 +134,6 @@ const config = {
   // Reset the module registry before running each individual test
   // resetModules: false,
 
-  // Remove the moduleNameMapper for punycode
-  moduleNameMapper: {},
-
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,
 
@@ -198,15 +195,15 @@ const config = {
       'ts-jest',
       {
         tsconfig: 'tsconfig.test.json',
+        useESM: true,
       },
     ],
   },
 
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   "/node_modules/",
-  //   "\\.pnp\\.[^\\/]+$"
-  // ],
+  transformIgnorePatterns: ['/node_modules/(?!(punycode)/)'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
