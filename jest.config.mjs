@@ -101,6 +101,9 @@ const config = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+  moduleNameMapper: {
+    '^punycode$': '<rootDir>/node_modules/punycode/',
+  },
 
   // moduleNameMapper: {
   //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
