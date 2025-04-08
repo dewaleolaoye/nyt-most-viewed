@@ -2,7 +2,6 @@ import { Avatar, AvatarGroup, Box, Flex, Image, Text } from '@chakra-ui/react';
 import { mediaMetaData, formatDate } from '@/utils';
 import SectionTag from '../SectionTag';
 import { IArticles, IFormat } from '@/types';
-
 interface Props {
   filter: IFormat;
   articles: IArticles;
@@ -14,7 +13,6 @@ const ArticleCard = ({ filter, articles }: Props) => {
   return (
     <Box
       width='100%'
-      // maxW={{ base: 'auto', md: '420px' }}
       border='1px solid #efefef'
       borderRadius='8px'
       p={{ base: '8px', md: '16px' }}
