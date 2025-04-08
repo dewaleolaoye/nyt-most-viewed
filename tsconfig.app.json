@@ -28,7 +28,5 @@
     }
   },
   "include": ["src", "tests", "**/*.test.tsx", "**/*.test.ts"],
-  "exclude": ["node_modules", "dist", "build"],
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "exclude": ["node_modules", "dist", "build"]
 }
