@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import { render } from '@/utils';
-import '@testing-library/jest-dom';
 import SectionTag from '.';
 
 describe('SectionTag', () => {

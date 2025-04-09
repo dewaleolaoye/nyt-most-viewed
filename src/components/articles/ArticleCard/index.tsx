@@ -9,7 +9,7 @@ interface Props {
 }
 const ArticleCard = ({ filter, articles }: Props) => {
   const { title, section, subsection, abstract, published_date, byline, url } = articles;
-  const { metadata, caption } = mediaMetaData({ articles, filter });
+  const { metadata, caption } = mediaMetaData({ media: articles.media, filter });
 
   return (
     <Box
