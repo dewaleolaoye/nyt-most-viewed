@@ -5,15 +5,14 @@ import { getArticles } from '@/api';
 import Loader from '@/components/common/Loader';
 import ArticleCard from '@/components/articles/ArticleCard';
 import FilterSelect from '@/components/articles/FilterSelect';
+import { IPeriod } from './types';
 
 function App() {
-  const [period, setPeriod] = useState(1);
+  const [period, setPeriod] = useState<IPeriod>(1);
   const { data, isLoading, isSuccess, error, isError } = useQuery({
     queryKey: ['articles', period],
     queryFn: () => getArticles(period),
   });
-
-  console.log(data, 'THE DATA');
 
   return (
     <Box
@@ -39,7 +38,7 @@ function App() {
         <Box width={{ base: '100%', md: '300px' }}>
           <FilterSelect
             onValueChange={({ value }) => {
-              setPeriod(Number([value[0]]));
+              setPeriod(Number([value[0]]) as IPeriod);
             }}
           />
         </Box>

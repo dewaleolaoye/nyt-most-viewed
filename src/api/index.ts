@@ -1,8 +1,8 @@
 import { config } from "@/config";
-import { IArticlesRO, IError } from "@/types";
+import { IArticlesRO, IError, IPeriod } from "@/types";
 import axios, { AxiosResponse } from "axios";
 
-export const getArticles = async (period?: number): Promise<IArticlesRO> => {
+export const getArticles = async (period?: IPeriod): Promise<IArticlesRO> => {
   const BASE_URL = `${config.API_URL}/${period ?? 1}.json?api-key=${config.API_KEY}`;
 
   try {

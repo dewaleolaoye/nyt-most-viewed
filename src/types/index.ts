@@ -58,3 +58,5 @@ export interface IArticlesRO extends IError {
   num_results: number;
   results: IArticles[];
 }
+
+export type IPeriod = 1 | 7 | 30;

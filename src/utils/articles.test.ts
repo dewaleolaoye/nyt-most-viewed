@@ -50,8 +50,8 @@ describe('mediaMetaData', () => {
     copyright: 'Ashley Gilbertson for The New York Times',
     approved_for_syndication: 1,
     'media-metadata': [
-      { format: 'Standard Thumbnail', url: 'https://static01.nyt.com/images/2025/04/07/multimedia/00BIZ-TARIFFS-INVESTORS-qklv/00BIZ-TARIFFS-INVESTORS-qklv-thumbStandard.jpg', height: 75, width: 75 },
-      { format: 'mediumThreeByTwo210', url: 'https://static01.nyt.com/images/2025/04/07/multimedia/00BIZ-TARIFFS-INVESTORS-qklv/00BIZ-TARIFFS-INVESTORS-qklv-thumbStandard.jpg', height: 140, width: 210 }
+      { format: 'Standard Thumbnail', url: 'thumbstandard.jpg', height: 75, width: 75 },
+      { format: 'mediumThreeByTwo210', url: 'thumbstandard.jpg', height: 140, width: 210 }
     ]
   };
 
@@ -68,7 +68,7 @@ describe('mediaMetaData', () => {
       subtype: 'photo',
       metadata: {
         format: 'Standard Thumbnail',
-        url: 'https://static01.nyt.com/images/2025/04/07/multimedia/00BIZ-TARIFFS-INVESTORS-qklv/00BIZ-TARIFFS-INVESTORS-qklv-thumbStandard.jpg',
+        url: 'thumbstandard.jpg',
         height: 75,
         width: 75
       }
@@ -88,7 +88,7 @@ describe('mediaMetaData', () => {
       subtype: 'photo',
       metadata: {
         format: 'mediumThreeByTwo210',
-        url: 'https://static01.nyt.com/images/2025/04/07/multimedia/00BIZ-TARIFFS-INVESTORS-qklv/00BIZ-TARIFFS-INVESTORS-qklv-thumbStandard.jpg',
+        url: 'thumbstandard.jpg',
         height: 140,
         width: 210
       }
