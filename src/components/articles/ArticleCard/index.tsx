@@ -1,6 +1,7 @@
-import { Avatar, AvatarGroup, Box, Flex, Image, Text } from '@chakra-ui/react';
-import { mediaMetaData, formatDate } from '@/utils';
-import SectionTag from '../SectionTag';
+import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { mediaMetaData, formatDate, formatByline } from '@/utils';
+import SectionTag from '@/components/articles/SectionTag';
+import Avatar from '@/components/articles/Avatar';
 import { IArticles, IFormat } from '@/types';
 interface Props {
   filter: IFormat;
@@ -63,19 +64,14 @@ const ArticleCard = ({ filter, articles }: Props) => {
             gap='8px'
             pb='16px'
           >
-            <AvatarGroup>
-              <Avatar.Root>
-                <Avatar.Fallback name={byline} />
-                <Avatar.Image />
-              </Avatar.Root>
-            </AvatarGroup>
+            <Avatar name={byline ? formatByline(byline) : ''} />
 
             <Box>
               <Text
                 fontWeight='500'
                 fontSize='14px'
               >
-                {byline ? byline : 'N/A'}
+                {byline ? formatByline(byline) : 'N/A'}
               </Text>
 
               <Text

@@ -13,6 +13,8 @@ function App() {
     queryFn: () => getArticles(period),
   });
 
+  console.log(data, 'THE DATA');
+
   return (
     <Box
       maxWidth={{ base: '1280px', md: '1480px' }}

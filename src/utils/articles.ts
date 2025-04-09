@@ -4,7 +4,7 @@ interface IMetaData {
   filter: IFormat;
   articles: IArticles;
 }
-function normalizeToArray<T>(data: T | T[]): T[] {
+export function normalizeToArray<T>(data: T | T[]): T[] {
   return Array.isArray(data) ? data : [data];
 }
 
@@ -34,3 +34,6 @@ export const mediaMetaData = ({ articles, filter }: IMetaData) => {
   };
 };
 
+export const formatByline = (byline: string) => {
+  return byline.replace('By', '');
+};

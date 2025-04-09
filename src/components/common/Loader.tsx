@@ -4,6 +4,7 @@ const Loader = () => {
   return (
     <Spinner
       size='sm'
+      role='loader'
       color='#fff'
       css={{ '--spinner-track-color': '#131316' }}
     />
