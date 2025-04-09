@@ -5,7 +5,6 @@ import App from './App';
 import userEvent from '@testing-library/user-event';
 import axios from 'axios';
 
-// Add axios mock
 jest.mock('axios');
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
