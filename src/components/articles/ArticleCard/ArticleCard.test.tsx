@@ -3,12 +3,13 @@ import ArticleCard from '.';
 import { render } from '@/utils';
 import { mockArticle } from '@/__mocks__/mock-article';
 
+const articles = mockArticle.results[0];
 describe('ArticleCard', () => {
   it('renders article card with different image format', async () => {
     await act(async () => {
       render(
         <ArticleCard
-          articles={mockArticle}
+          articles={articles}
           filter='mediumThreeByTwo210'
         />
       );
@@ -22,7 +23,7 @@ describe('ArticleCard', () => {
     await act(async () => {
       render(
         <ArticleCard
-          articles={mockArticle}
+          articles={articles}
           filter='Standard Thumbnail'
         />
       );
@@ -32,13 +33,13 @@ describe('ArticleCard', () => {
     expect(screen.getByText('Business')).toBeInTheDocument();
 
     const link = screen.getByRole('link');
-    expect(link).toHaveAttribute('href', mockArticle.url);
+    expect(link).toHaveAttribute('href', articles.url);
     expect(link).toHaveAttribute('target', '_blank');
   });
 
   it('renders article card with section tag', async () => {
     const article = {
-      ...mockArticle,
+      ...articles,
       subsection: 'Markets',
     };
 
@@ -58,7 +59,7 @@ describe('ArticleCard', () => {
     await act(async () => {
       render(
         <ArticleCard
-          articles={mockArticle}
+          articles={articles}
           filter='Standard Thumbnail'
         />
       );
@@ -71,7 +72,7 @@ describe('ArticleCard', () => {
     await act(async () => {
       render(
         <ArticleCard
-          articles={mockArticle}
+          articles={articles}
           filter='mediumThreeByTwo440'
         />
       );
@@ -84,7 +85,7 @@ describe('ArticleCard', () => {
     await act(async () => {
       render(
         <ArticleCard
-          articles={mockArticle}
+          articles={articles}
           filter='Standard Thumbnail'
         />
       );
@@ -95,7 +96,7 @@ describe('ArticleCard', () => {
 
   it('renders N/A when byline is empty', async () => {
     const articleWithoutByline = {
-      ...mockArticle,
+      ...articles,
       byline: '',
     };
 

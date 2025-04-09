@@ -1,3 +1,5 @@
+import { SelectValueChangeDetails } from "@chakra-ui/react";
+
 interface IMedum {
   type: string;
   subtype: string;
@@ -60,3 +62,12 @@ export interface IArticlesRO extends IError {
 }
 
 export type IPeriod = 1 | 7 | 30;
+
+export interface FilterValueChangeProps {
+  onValueChange: (
+    details: SelectValueChangeDetails<{
+      label: string;
+      value: string;
+    }>
+  ) => void;
+}

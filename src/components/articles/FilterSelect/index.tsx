@@ -1,5 +1,5 @@
 'use client';
-import { createListCollection, SelectValueChangeDetails } from '@chakra-ui/react';
+import { createListCollection } from '@chakra-ui/react';
 import {
   SelectContent,
   SelectItem,
@@ -8,16 +8,9 @@ import {
   SelectTrigger,
   SelectValueText,
 } from '@/components/ui/select';
+import { FilterValueChangeProps } from '@/types';
 
-interface Props {
-  onValueChange: (
-    details: SelectValueChangeDetails<{
-      label: string;
-      value: string;
-    }>
-  ) => void;
-}
-const FilterSelect = ({ onValueChange }: Props) => {
+const FilterSelect = ({ onValueChange }: FilterValueChangeProps) => {
   const list = createListCollection({
     items: [
       { label: 'Last 1 day', value: '1' },
