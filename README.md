@@ -1,7 +1,5 @@
 # Most Viewed NYT Articles
 
-This project displays the most viewed articles from the New York Times using the NYT API. It is built with [Vite](https://vitejs.dev/) and TypeScript.
-
 ## Installation
 
 - Clone the repository
@@ -44,3 +42,6 @@ This project displays the most viewed articles from the New York Times using the
 ```js
   yarn test:cov
 ```
+
+The production version is live at:
+🔗 [https://nyt-most-viewed.vercel.app](https://nyt-most-viewed.vercel.app/)
