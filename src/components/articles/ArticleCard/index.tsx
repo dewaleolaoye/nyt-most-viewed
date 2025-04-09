@@ -18,6 +18,7 @@ const ArticleCard = ({ filter, articles }: Props) => {
       borderRadius='8px'
       p={{ base: '8px', md: '16px' }}
       minH={{ base: 'auto', md: '585px' }}
+      data-testid='article-card'
     >
       <a
         href={url}

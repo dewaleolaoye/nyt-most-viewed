@@ -34,6 +34,7 @@ const ArticleList = ({ period }: Props) => {
           <Grid
             gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
             gridGap={{ base: '24px', md: '32px' }}
+            data-testid='articles-grid'
           >
             {data?.results?.map((article, index) => {
               return (
@@ -52,6 +53,7 @@ const ArticleList = ({ period }: Props) => {
             textAlign='center'
             mt='48px'
             fontWeight='500'
+            data-testid='copyright'
           >
             {data?.copyright}
           </Text>

@@ -24,6 +24,7 @@ const FilterSelect = ({ onValueChange }: FilterValueChangeProps) => {
       collection={list}
       name='period'
       onValueChange={onValueChange}
+      role='cy-button'
     >
       <SelectLabel fontWeight='400'>Filter Period</SelectLabel>
 

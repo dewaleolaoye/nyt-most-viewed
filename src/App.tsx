@@ -24,6 +24,7 @@ function App() {
           mb='32px'
           fontSize='24px'
           fontWeight='700'
+          data-testid='cy-title'
         >
           Most Viewed Articles
         </Text>

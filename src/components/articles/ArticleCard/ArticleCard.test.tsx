@@ -16,7 +16,10 @@ describe('ArticleCard', () => {
     });
 
     const image = screen.getAllByAltText('The Caption')[0];
-    expect(image).toHaveAttribute('src', 'mediumThreeByTwo210.jpg');
+    expect(image).toHaveAttribute(
+      'src',
+      'https://static01.nyt.com/images/2025/04/03/multimedia/01Kilmer-1-zlpq-print10/01Kilmer-1-zlpq-mediumThreeByTwo440.jpg'
+    );
   });
 
   it('renders article card with all content', async () => {

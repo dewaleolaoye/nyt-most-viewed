@@ -14,7 +14,7 @@ export const getArticles = async (period?: IPeriod): Promise<IArticlesRO> => {
     const _err = error as unknown as { response?: IError; };
 
     if (_err.response?.data) {
-      throw new Error(_err.response.data.fault.faultstring);
+      throw new Error(_err.response.data?.fault?.faultstring);
     }
 
     throw new Error("An unexpected error occurred");
