@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint",
     "preview": "vite preview",
     "test": "cross-env NODE_OPTIONS='--no-deprecation' jest --detectOpenHandles",
     "test:cov": "cross-env NODE_OPTIONS='--no-deprecation' jest --coverage"

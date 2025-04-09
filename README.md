@@ -43,5 +43,10 @@
   yarn test:cov
 ```
 
+- `yarn build` to build the project
+- `yarn preview` to preview it (NB: made sure `yarn build` is run before you preview)
+
+- Run `yarn lint` to check for errors
+
 The production version is live at:
 🔗 [https://nyt-most-viewed.vercel.app](https://nyt-most-viewed.vercel.app/)
