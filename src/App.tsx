@@ -1,18 +1,11 @@
 import { useState } from 'react';
-import { Box, Button, Center, Flex, Grid, Text } from '@chakra-ui/react';
-import { useQuery } from '@tanstack/react-query';
-import { getArticles } from '@/api';
-import Loader from '@/components/common/Loader';
-import ArticleCard from '@/components/articles/ArticleCard';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import FilterSelect from '@/components/articles/FilterSelect';
-import { IPeriod } from './types';
+import ArticleList from '@/components/articles/ArticleList';
+import { IPeriod } from '@/types';
 
 function App() {
   const [period, setPeriod] = useState<IPeriod>(1);
-  const { data, isLoading, isSuccess, error, isError } = useQuery({
-    queryKey: ['articles', period],
-    queryFn: () => getArticles(period),
-  });
 
   return (
     <Box
@@ -44,49 +37,7 @@ function App() {
         </Box>
       </Flex>
 
-      {isLoading && <Loader />}
-
-      {isError && (
-        <Center flexDir='column'>
-          <Text
-            fontSize='20px'
-            textAlign='center'
-          >
-            {String(error)}{' '}
-          </Text>
-
-          <Button>Refresh</Button>
-        </Center>
-      )}
-
-      {isSuccess && (
-        <>
-          <Grid
-            gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
-            gridGap={{ base: '24px', md: '32px' }}
-          >
-            {data?.results?.map((article, index) => {
-              return (
-                <ArticleCard
-                  key={`${article.id}-${index}`}
-                  articles={article}
-                  filter='mediumThreeByTwo440'
-                />
-              );
-            })}
-          </Grid>
-
-          <Text
-            fontSize='14px'
-            color='#797A7A'
-            textAlign='center'
-            mt='48px'
-            fontWeight='500'
-          >
-            {data?.copyright}
-          </Text>
-        </>
-      )}
+      <ArticleList period={period} />
     </Box>
   );
 }
