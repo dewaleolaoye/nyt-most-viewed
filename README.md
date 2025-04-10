@@ -48,5 +48,17 @@
 
 - Run `yarn lint` to check for errors
 
+### SonarQube
+
+- It is assumed that your have sonarqube installed and running on your machine
+- Create a new "Local Project" from the sonarqube dashboard on your machine [http://localhost:9000](http://localhost:9000)
+- Input the project name and click "Next"
+- Choose "Use the global setting" and click "Create project"
+- Select "Locally" for the Analyse method, you will be asked to generate a token, click "Generate"
+- Copy the token and click "Continue
+- Select `JS/TS/Web` for project options
+- An executable script will be generated, copy the script in the root directory of the project
+- If all goes well, you should see the analysis results in `http://localhost:9000/dashboard?id=nyt-most-viewed`
+
 The production version is live at:
 🔗 [https://nyt-most-viewed.vercel.app](https://nyt-most-viewed.vercel.app/)
