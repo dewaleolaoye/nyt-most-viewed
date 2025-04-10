@@ -2,5 +2,5 @@ projectKey=nyt-most-viewed
 serverUrl=http://localhost:9000
 serverVersion=25.4.0.105899
 dashboardUrl=http://localhost:9000/dashboard?id=nyt-most-viewed
-ceTaskId=e1b87691-8302-4801-ba23-1bad06883c64
-ceTaskUrl=http://localhost:9000/api/ce/task?id=e1b87691-8302-4801-ba23-1bad06883c64
+ceTaskId=c873fa2f-e1bd-4bd2-98a7-adff96dd2c8c
+ceTaskUrl=http://localhost:9000/api/ce/task?id=c873fa2f-e1bd-4bd2-98a7-adff96dd2c8c
