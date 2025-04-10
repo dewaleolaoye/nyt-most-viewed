@@ -48,6 +48,13 @@
 
 - Run `yarn lint` to check for errors
 
+### Cypress
+
+- Run `yarn cy:open` to open the cypress test runner
+- Select `E2E testing`
+- Choose your favorite browser
+- Select the test you want to run
+
 ### SonarQube
 
 - It is assumed that your have sonarqube installed and running on your machine
